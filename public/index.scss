@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
 body {
   background: url('../src/assets/debate-background.jpg') no-repeat center center
     fixed;
   background-size: cover;
+  font-family: 'Roboto Mono';
 }
 .App {
   max-width: 1400px;
@@ -88,4 +91,8 @@ body {
     margin: 25px auto;
     color: #ffffff;
   }
+}
+
+.topicText {
+  font-size: 14px;
 }
