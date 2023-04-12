@@ -41,7 +41,7 @@ export const Conversation = () => {
   const topicbubble = {
     position: 'fixed',
     bottom: '40px',
-    right: '50%',
+    right: '30%',
     backgroundColor: '#fff',
     color: '#000',
     padding: '10px',
@@ -54,11 +54,13 @@ export const Conversation = () => {
   const quoteTextStyle = {
     fontSize: '16px',
     fontWeight: 'bold',
+    textAlign:'center'
   };
 
   const buttonStyle = {
     position: 'fixed',
     bottom: '20px',
+    right: '50%',
   }
 
 
