@@ -21,12 +21,10 @@ const ChooseTopic = () => {
         <Topics />
       </section>
 
-      <h3 class="centerHeader">Choose your topic</h3>
-
-      <input value={topic} onChange={handleInputChange} />
-
-      <footer>
-        <button onClick={handleGo}>Go</button>
+      <footer className="stepFooter">
+        <button className="stepButton" onClick={handleGo}>
+          Go
+        </button>
       </footer>
     </>
   ) : null;

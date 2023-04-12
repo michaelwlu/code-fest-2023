@@ -1,9 +1,19 @@
-import React, { useEffect, useState, Fragment, useCallback } from 'react';
+import React from 'react';
+import { useDebateContext } from '../pages/DebateContext';
 
 export const TopicBox = () => {
+  const { setTopic } = useDebateContext();
+
+  const typeTopic = (t) => {
+    setTopic(t);
+  };
   return (
     <>
-      <textarea></textarea>
+      <textarea
+        onChange={(e) => typeTopic(e)}
+        placeholder="...or make your own"
+        className="topicInput"
+      ></textarea>
     </>
   );
 };

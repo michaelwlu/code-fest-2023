@@ -1,6 +1,7 @@
 import React, { useEffect, useState, Fragment, useCallback } from 'react';
 import { useDebateContext } from '../pages/DebateContext';
 import { topics } from './lists';
+import { TopicBox } from './TopicBox';
 
 export const Topics = () => {
   const { step, topic, setTopic, setStep } = useDebateContext();
@@ -22,12 +23,16 @@ export const Topics = () => {
           return (
             <div
               onClick={() => handleTopicClick(e.question)}
-              class={`topicBox ${topic === e.topic ? 'borderBlue' : ''}`}
+              className={`topicBox ${topic === e.question ? 'borderBlue' : ''}`}
             >
-              {e.topic}
+              <span className="topicText">{e.topic}</span>
             </div>
           );
         })}
+
+        <h3 class="centerHeader">Choose your topic</h3>
+
+        <TopicBox></TopicBox>
       </div>
     </>
   );

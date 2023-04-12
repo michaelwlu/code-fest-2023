@@ -28,20 +28,30 @@ body {
 }
 
 .topicsContainer {
-  width: 320px;
+  width: 500px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
 }
 
 .topicBox {
-  width: 100px;
-  height: 100px;
+  //width: 100px;
+  // height: 100px;
   background-color: #d9adad;
-  flex: 1 0 20%;
-  margin: 10px;
+  flex: 1 0 21%; /* explanation below */
+  margin: 5px;
+  height: 100px;
+  //margin: 10px;
   box-sizing: border-box;
   word-wrap: break-word;
+  position: relative;
+}
+
+.topicText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .borderBlue {
@@ -66,4 +76,16 @@ body {
 
 .centerHeader {
   font-size: 36px;
+}
+
+.topicInput {
+  margin: 40px auto;
+  width: 350px;
+}
+
+.topicsContainer {
+  .centerHeader {
+    margin: 25px auto;
+    color: #ffffff;
+  }
 }
