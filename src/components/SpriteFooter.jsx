@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDebateContext } from '../pages/DebateContext';
+import Image from 'next/image';
 
 export const SpriteFooter = () => {
   const { personOne, personTwo } = useDebateContext();
@@ -7,7 +8,7 @@ export const SpriteFooter = () => {
   return (
     <>
       {/* First Person */}
-      <div
+      {/* <div
         style={{
           background: `url(/sprites/${personOne?.sprite}) no-repeat center center`,
           backgroundSize: 'contain',
@@ -16,10 +17,27 @@ export const SpriteFooter = () => {
         }}
       >
         hello
-      </div>
+      </div> */}
+      {personOne && (
+        <div style={{ position: 'fixed', bottom: 30, left: 30 }}>
+          <Image
+            src={`/sprites/${personOne?.sprite}`}
+            width="300"
+            height="500"
+          />
+        </div>
+      )}
 
       {/* Second Person */}
-      <div></div>
+      {personTwo && (
+        <div style={{ position: 'fixed', bottom: 30, right: 30 }}>
+          <Image
+            src={`/sprites/${personTwo?.sprite}`}
+            width="300"
+            height="500"
+          />
+        </div>
+      )}
     </>
   );
 };
