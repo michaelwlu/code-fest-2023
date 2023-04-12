@@ -5,7 +5,7 @@ import { useDebateContext } from './DebateContext';
 const StartConversation = () => {
   const { step } = useDebateContext();
 
-  return step === 3 ? (
+  return step === 2 ? (
     <>
       <section>
         <Conversation></Conversation>

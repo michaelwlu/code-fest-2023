@@ -7,11 +7,11 @@ const ChooseTopic = () => {
 
   const handleGo = () => {
     if (topic) {
-      setStep(3);
+      setStep(2);
     }
   };
 
-  return step === 2 ? (
+  return step === 1 ? (
     <>
       <section>
         <Topics></Topics>

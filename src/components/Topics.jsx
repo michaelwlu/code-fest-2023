@@ -1,9 +1,25 @@
 import React, { useEffect, useState, Fragment, useCallback } from 'react';
+import { useDebateContext } from '../pages/DebateContext';
+import { topics } from './lists';
 
-export const Topics = () => {
+export const Topics = (props) => {
+  const { onClick } = props;
+  const { step, topic, setStep } =
+    useDebateContext();
+
   return (
     <>
-      <h1>Topics Section</h1>
+      <div class="topicsContainer">
+        {topics[0].map((topic) => {
+          return (
+            <div
+
+            >
+              {topic.topic}
+            </div>
+          );
+        })}
+      </div>
     </>
   );
 };
