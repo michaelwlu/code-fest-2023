@@ -4,18 +4,19 @@ import { topics } from './lists';
 
 export const Topics = (props) => {
   const { onClick } = props;
-  const { step, topic, setStep } =
+  const { step, topic, setTopic, setStep } =
     useDebateContext();
 
   return (
     <>
       <div class="topicsContainer">
-        {topics[0].map((topic) => {
+        {topics[0].map((e) => {
           return (
             <div
-
+            onClick={() => onClick(e)}
+            class={`topicBox ${topic === e ? 'borderBlue' : ''}`} 
             >
-              {topic.topic}
+              {e.topic}
             </div>
           );
         })}

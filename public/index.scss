@@ -24,6 +24,23 @@ body {
   word-wrap: break-word;
 }
 
+.topicsContainer {
+  width: 320px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.topicBox {
+  width: 100px;
+  height: 100px;
+  background-color: #d9adad;
+  flex: 1 0 20%;
+  margin: 10px;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+
 .borderBlue {
   border: 10px solid #0038ff;
 }

@@ -3,7 +3,7 @@ import React from 'react';
 import { useDebateContext } from './DebateContext';
 
 const ChooseTopic = () => {
-  const { step, topic, setStep } = useDebateContext();
+  const { step, topic, setTopic, setStep } = useDebateContext();
 
   const handleGo = () => {
     if (topic) {
@@ -11,11 +11,22 @@ const ChooseTopic = () => {
     }
   };
 
+  const handleTopicClick = (e) => {
+    if (!topic) {
+      setTopic(e);
+    } else if (topic) {
+      setTopic('');
+    }
+  };
+
   return step === 1 ? (
     <>
       <section>
-        <Topics></Topics>
+        <Topics onClick={(e) => handleTopicClick(e)}></Topics>
       </section>
+
+      <h3 class="centerHeader">Choose your topic</h3>
+
       <footer>
         <button onClick={handleGo}>Go</button>
       </footer>
