@@ -4,6 +4,7 @@ import { TopicBox } from '@/components/TopicBox';
 import { Topics } from '@/components/Topics';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+
 export default function Home() {
   const [users, setUsers] = useState([]);
   const [step, setStep] = useState(1);
@@ -47,6 +48,10 @@ export default function Home() {
     }
   };
 
+  const handlePersonalityClick = () => {
+    return null;
+  };
+
   return (
     <div className="App">
       <h1>Test App Name</h1>
@@ -55,7 +60,7 @@ export default function Home() {
       {step === 1 ? (
         <>
           <section>
-            <Personalities></Personalities>
+            <Personalities handlePersonalityClick></Personalities>
           </section>
 
           <section>
