@@ -6,6 +6,7 @@ const ChooseTopic = () => {
   const { step, topic, setTopic, setStep } = useDebateContext();
 
   const handleGo = () => {
+    console.log(topic.topic);
     if (topic) {
       setStep(2);
     }
@@ -14,7 +15,9 @@ const ChooseTopic = () => {
   const handleTopicClick = (e) => {
     if (!topic) {
       setTopic(e);
-    } else if (topic) {
+    } else if (topic && topic.topic !== e.topic) {
+      setTopic(e);
+    } else if (topic && topic.topic === e.topic) {
       setTopic('');
     }
   };
