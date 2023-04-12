@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useLayoutEffect  } from 'react';
 import { useChatGPTMutation } from '@/api/mutations/useChatGPTMutation';
 import { useDebateContext } from '../pages/DebateContext';
 
@@ -94,6 +94,10 @@ export const Conversation = () => {
     // handleTurn();
     setDebateStarted(true);
   };
+
+  useLayoutEffect(() => {
+    handleClick();
+  }, []); // Only run the effect once on mount
 
   const elementsArray = chatLog.map((element, index) => {
     return (
