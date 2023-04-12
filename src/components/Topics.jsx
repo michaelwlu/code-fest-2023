@@ -18,7 +18,7 @@ export const Topics = () => {
 
   return (
     <>
-      <div class="topicsContainer">
+      <div className="topicsContainer">
         {topics.map((e) => {
           return (
             <div
@@ -30,7 +30,7 @@ export const Topics = () => {
           );
         })}
 
-        <h3 class="centerHeader">Choose your topic</h3>
+        <h3 className="centerHeader">Choose your topic</h3>
 
         <TopicBox></TopicBox>
       </div>

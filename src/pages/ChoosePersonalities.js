@@ -33,10 +33,10 @@ const ChoosePersonalities = () => {
         ></Personalities>
       </section>
 
-      <h3 class="centerHeader">Choose your fighters</h3>
+      <h3 className="centerHeader">Choose your fighters</h3>
 
-      <footer class="stepFooter">
-        <button class="stepButton" onClick={handleNext}>
+      <footer className="stepFooter">
+        <button className="stepButton" onClick={handleNext}>
           Next
         </button>
       </footer>

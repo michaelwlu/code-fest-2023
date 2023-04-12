@@ -9,7 +9,7 @@ export const Personalities = (props) => {
 
   return (
     <>
-      <div class="personsContainer">
+      <div className="personsContainer">
         {personalities.map((person) => {
           return (
             <div
