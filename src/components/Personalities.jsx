@@ -1,4 +1,5 @@
 import React, { useEffect, useState, Fragment, useCallback } from 'react';
+import { useDebateContext } from '../pages/DebateContext';
 
 const persons = [
   { name: 'Person 1' },
@@ -17,12 +18,19 @@ const persons = [
 
 export const Personalities = (props) => {
   const { onClick } = props;
+  const { step, personOne, setPersonOne, setPersonTwo, personTwo, setStep } =
+    useDebateContext();
 
   return (
     <div class="personsContainer">
       {persons.map((person) => {
         return (
-          <div onClick={() => onClick(person)} class="personBox">
+          <div
+            onClick={() => onClick(person)}
+            class={`personBox ${personOne === person ? 'borderBlue' : ''} ${
+              personTwo === person ? 'borderRed' : ''
+            }`}
+          >
             {person.name}
           </div>
         );

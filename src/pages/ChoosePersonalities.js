@@ -6,7 +6,6 @@ import { TopicBox } from '@/components/TopicBox';
 const ChoosePersonalities = () => {
   const { step, personOne, setPersonOne, setPersonTwo, personTwo, setStep } =
     useDebateContext();
-  const [count, setCount] = useState(0);
 
   const handleNext = () => {
     if (personOne && personTwo) {
