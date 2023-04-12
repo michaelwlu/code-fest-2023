@@ -95,9 +95,6 @@ export const Conversation = () => {
     setDebateStarted(true);
   };
 
-  useLayoutEffect(() => {
-    handleClick();
-  }, []); // Only run the effect once on mount
 
   const elementsArray = chatLog.map((element, index) => {
     return (
@@ -129,7 +126,7 @@ export const Conversation = () => {
 
       {!isLoading && (
         <button style={buttonStyle} onClick={handleClick}>
-          Next!
+          {debateStarted===true? 'Next!':'Start!'}
         </button>
       )}
     </>
