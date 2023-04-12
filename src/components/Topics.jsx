@@ -1,10 +1,10 @@
-import React, { useEffect, useState, Fragment, useCallback } from 'react';
+import React from 'react';
 import { useDebateContext } from '../pages/DebateContext';
 import { topics } from './lists';
 import { TopicBox } from './TopicBox';
 
 export const Topics = () => {
-  const { step, topic, setTopic, setStep } = useDebateContext();
+  const { topic, setTopic } = useDebateContext();
 
   const handleTopicClick = (question) => {
     if (!topic) {

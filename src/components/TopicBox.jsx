@@ -15,6 +15,7 @@ export const TopicBox = () => {
         onChange={(e) => typeTopic(e.target.value)}
         placeholder="...or make your own"
         className="topicInput"
+        rows="3"
       ></textarea>
     </>
   );
