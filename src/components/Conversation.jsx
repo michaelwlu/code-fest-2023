@@ -114,10 +114,11 @@ export const Conversation = () => {
           }
         >
           <div variant="body1" style={quoteTextStyle}>
-            {isLoading ? '...' : lastMessage}
+            {isLoading ? 'Thinking...' : lastMessage}
           </div>
         </div>
       ) : null}
+
       <div style={topicbubble}>
         <div variant="body1" style={quoteTextStyle}>
           {debateContext.topic}
