@@ -101,7 +101,7 @@ export const Conversation = () => {
   return(
   <>
     {debateStarted === true ? 
-    <div style={turn === debateContext.personOne.name ? leftbubble:rightbubble}>
+    <div style={turn === debateContext.personOne.name ? rightbubble:leftbubble}>
       <div variant="body1" style={quoteTextStyle}>
         {lastMessage}
       </div>
