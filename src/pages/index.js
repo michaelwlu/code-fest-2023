@@ -60,7 +60,9 @@ export default function Home() {
       {step === 1 ? (
         <>
           <section>
-            <Personalities handlePersonalityClick></Personalities>
+            <Personalities
+              onClick={() => handlePersonalityClick()}
+            ></Personalities>
           </section>
 
           <section>
