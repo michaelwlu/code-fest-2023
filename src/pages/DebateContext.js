@@ -33,3 +33,5 @@ export const DebateProvider = ({ children }) => {
     </DebateContext.Provider>
   );
 };
+
+export default DebateContext;
