@@ -1,6 +1,6 @@
 import React from 'react';
-import { useDebateContext } from '../pages/DebateContext';
 import Image from 'next/image';
+import { useDebateContext } from './DebateContext';
 
 export const SpriteFooter = () => {
   const { personOne, personTwo } = useDebateContext();

@@ -1,7 +1,7 @@
 import React from 'react';
-import { useDebateContext } from '../pages/DebateContext';
 import { personalities } from './lists';
 import { SpriteFooter } from './SpriteFooter';
+import { useDebateContext } from './DebateContext';
 
 export const Personalities = (props) => {
   const { onClick } = props;

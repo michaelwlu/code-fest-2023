@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDebateContext } from '../pages/DebateContext';
+import { useDebateContext } from './DebateContext';
 
 export const TopicBox = () => {
   const { topic, setTopic } = useDebateContext();

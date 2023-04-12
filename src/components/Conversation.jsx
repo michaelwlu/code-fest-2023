@@ -1,6 +1,6 @@
-import React, { useState,useLayoutEffect  } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 import { useChatGPTMutation } from '@/api/mutations/useChatGPTMutation';
-import { useDebateContext } from '../pages/DebateContext';
+import { useDebateContext } from './DebateContext';
 
 export const Conversation = () => {
   const debateContext = useDebateContext();

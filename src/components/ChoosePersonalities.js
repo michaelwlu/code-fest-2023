@@ -1,6 +1,6 @@
 import React from 'react';
-import { useDebateContext } from './DebateContext';
 import { Personalities } from '@/components/Personalities';
+import { useDebateContext } from './DebateContext';
 
 const ChoosePersonalities = () => {
   const { step, personOne, setPersonOne, setPersonTwo, personTwo, setStep } =

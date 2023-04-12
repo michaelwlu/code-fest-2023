@@ -1,17 +1,14 @@
-import { Conversation } from '@/components/Conversation';
-import { Personalities } from '@/components/Personalities';
-import { TopicBox } from '@/components/TopicBox';
-import { Topics } from '@/components/Topics';
 import { createContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import { useChatGPTMutation } from '@/api/mutations/useChatGPTMutation';
-import { DebateProvider } from './DebateContext';
-import ChoosePersonalities from './ChoosePersonalities';
-import ChooseTopic from './ChooseTopic';
-import StartConversation from './StartConversation';
+
+import ChoosePersonalities from '../components/ChoosePersonalities';
+
+import StartConversation from '../components/StartConversation';
 import { SpriteFooter } from '@/components/SpriteFooter';
-import { Box, Typography } from '@mui/material';
-import Title from './Title';
+import ChooseTopic from '@/components/ChooseTopic';
+import { DebateProvider } from '@/components/DebateContext';
+import Title from '@/components/Title';
 
 export default function Home() {
   const { mutateAsync } = useChatGPTMutation();
