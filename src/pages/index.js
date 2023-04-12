@@ -4,33 +4,21 @@ import { TopicBox } from '@/components/TopicBox';
 import { Topics } from '@/components/Topics';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useChatGPTMutation } from '@/api/mutations/useChatGPTMutation';
 
 export default function Home() {
   const [users, setUsers] = useState([]);
   const [step, setStep] = useState(1);
   const [topic, setTopic] = useState();
 
+  const { mutateAsync } = useChatGPTMutation();
+
   useEffect(() => {
     const start = async () => {
       console.log('starting up...');
       //test entry point here
 
-      const response = await axios.post(
-        'https://api.openai.com/v1/completions',
-        {
-          prompt: `how is the weather in new york today?"`,
-          model: 'text-davinci-002',
-          max_tokens: 50,
-          n: 1,
-          stop: '.',
-        },
-        {
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer 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`,
-          },
-        }
-      );
+      const response = await mutateAsync('How is the weather today?');
       console.log('response: ', response.data.choices[0].text);
     };
     start();
