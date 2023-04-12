@@ -6,29 +6,24 @@ const ChooseTopic = () => {
   const { step, topic, setTopic, setStep } = useDebateContext();
 
   const handleGo = () => {
-    console.log(topic.topic);
     if (topic) {
       setStep(2);
     }
   };
 
-  const handleTopicClick = (e) => {
-    if (!topic) {
-      setTopic(e);
-    } else if (topic && topic.topic !== e.topic) {
-      setTopic(e);
-    } else if (topic && topic.topic === e.topic) {
-      setTopic('');
-    }
+  const handleInputChange = (e) => {
+    setTopic(e.target.value);
   };
 
   return step === 1 ? (
     <>
       <section>
-        <Topics onClick={(e) => handleTopicClick(e)}></Topics>
+        <Topics />
       </section>
 
       <h3 class="centerHeader">Choose your topic</h3>
+
+      <input value={topic} onChange={handleInputChange} />
 
       <footer>
         <button onClick={handleGo}>Go</button>
