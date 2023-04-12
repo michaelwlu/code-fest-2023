@@ -1,25 +1,23 @@
 import React, { useState } from 'react';
 import { useChatGPTMutation } from '@/api/mutations/useChatGPTMutation';
+import { useDebateContext } from '../pages/DebateContext';
 
 
 export const Conversation = () => {
-  
-  const person1 = 'eminem';
-  const person2 = 'beyonce';
-  const topic = 'is climit change important?';
+  const debateContext = useDebateContext();
   const { mutateAsync } = useChatGPTMutation();
 
   //determines who's turn it is
-  const [turn, setTurn] = useState(person1);
+  const [turn, setTurn] = useState(debateContext.personOne.name);
   //stores all messages
   const [chatLog, setChatLog]=useState([])
   //stores last response to be used as prompt. inits as topic
-  const [lastMessage,setLastMessage]=useState(topic)
+  const [lastMessage,setLastMessage]=useState(debateContext.topic)
 
 
   //determines who's turn it is. turn starts as person 1
   const handleTurn = async () =>{
-    turn === person1? setTurn(person2):setTurn(person1)
+    turn === debateContext.personOne.name? setTurn(debateContext.personTwo.name):setTurn(debateContext.personOne.name)
   }
 
   

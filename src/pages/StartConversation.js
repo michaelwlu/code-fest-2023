@@ -11,13 +11,7 @@ const StartConversation = () => {
         <Conversation></Conversation>
       </section>
     </>
-  ) : (
-    <>
-      <section>
-        <Conversation></Conversation>
-      </section>
-    </>
-  );
+  ) : null;
 };
 
 export default StartConversation;
