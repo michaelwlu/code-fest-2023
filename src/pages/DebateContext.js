@@ -1,6 +1,4 @@
-import React, { useState } from 'react';
-
-const { createContext, useContext } = require('react');
+import React, { createContext, useContext, useState } from 'react';
 
 const DebateContext = createContext(null);
 
