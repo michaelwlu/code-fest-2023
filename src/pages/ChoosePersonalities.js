@@ -14,11 +14,22 @@ const ChoosePersonalities = () => {
   };
 
   const handlePersonalityClick = (person) => {
-    if (!personOne) {
+    if (!personOne && !personTwo) {
       setPersonOne(person);
+    } else if (personOne === person) {
+      setPersonOne('');
     } else if (!personTwo) {
       setPersonTwo(person);
+    } else if (personTwo === person) {
+      setPersonTwo('');
     }
+
+    // if (person === personOne) {
+
+    // }
+    // if (person === personTwo) {
+    //   setPersonTwo('');
+    // }
   };
 
   return step === 0 ? (

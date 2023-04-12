@@ -18,9 +18,10 @@ body {
   width: 100px;
   height: 100px;
   background-color: #d9adad;
-  flex: 1 0 calc(33.33% - 20px);
+  flex: 1 0 20%;
   margin: 10px;
   box-sizing: border-box;
+  word-wrap: break-word;
 }
 
 .borderBlue {
