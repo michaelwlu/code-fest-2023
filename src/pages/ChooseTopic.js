@@ -18,9 +18,11 @@ const ChooseTopic = () => {
       </section>
 
       <footer className="stepFooter">
-        <button className="stepButton" onClick={handleGo}>
-          Go
-        </button>
+        {topic && (
+          <button className="stepButton" onClick={handleGo}>
+            Go
+          </button>
+        )}
       </footer>
     </>
   ) : null;

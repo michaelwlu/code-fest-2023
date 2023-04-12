@@ -4,15 +4,15 @@ import { useDebateContext } from '../pages/DebateContext';
 
 export const Conversation = () => {
   const debateContext = useDebateContext();
-  const { mutateAsync } = useChatGPTMutation();
+  const { mutateAsync, isLoading } = useChatGPTMutation();
 
   //determines who's turn it is
   const [turn, setTurn] = useState(debateContext.personTwo.name);
-  const [debateStarted, setDebateStarted] = useState(false);
+  const { debateStarted, setDebateStarted } = debateContext;
   //stores all messages
   const [chatLog, setChatLog] = useState([]);
   //stores last response to be used as prompt. inits as topic
-  const [lastMessage,setLastMessage]=useState(debateContext.topic)
+  const [lastMessage, setLastMessage] = useState(debateContext.topic);
 
   const leftbubble = {
     position: 'fixed',
@@ -23,7 +23,7 @@ export const Conversation = () => {
     padding: '10px',
     borderRadius: '10px',
     zIndex: 9999,
-    width:'40%'
+    width: '40%',
   };
 
   const rightbubble = {
@@ -35,7 +35,7 @@ export const Conversation = () => {
     padding: '10px',
     borderRadius: '10px',
     zIndex: 9999,
-    width:'40%'
+    width: '40%',
   };
 
   const topicbubble = {
@@ -47,18 +47,18 @@ export const Conversation = () => {
     padding: '10px',
     borderRadius: '10px',
     zIndex: 9999,
-    width:'40%'
-  }
-
+    width: '40%',
+  };
 
   const quoteTextStyle = {
     fontSize: '16px',
     fontWeight: 'bold',
-    textAlign:'center'
+    textAlign: 'center',
   };
 
   const buttonStyle = {
     position: 'fixed',
+<<<<<<< Updated upstream
     bottom: '75px',
     right: '45%',
     backgroundColor:'#d9d9d9',
@@ -69,6 +69,11 @@ export const Conversation = () => {
 
   }
 
+=======
+    bottom: '20px',
+    right: '50%',
+  };
+>>>>>>> Stashed changes
 
   //determines who's turn it is. turn starts as person 1
   const handleTurn = async () => {
@@ -78,6 +83,7 @@ export const Conversation = () => {
   };
 
   const handleClick = async () => {
+    handleTurn();
     const response = await mutateAsync({
       prompt: lastMessage,
       personality: turn,
@@ -93,7 +99,7 @@ export const Conversation = () => {
     setChatLog([...chatLog, newChatEntry]);
     console.log(chatLog);
     //change turns
-    handleTurn();
+    // handleTurn();
     setDebateStarted(true);
   };
 
@@ -106,19 +112,30 @@ export const Conversation = () => {
     );
   });
 
-  return(
-  <>
-    {debateStarted === true ? 
-    <div style={turn === debateContext.personOne.name ? rightbubble:leftbubble}>
-      <div variant="body1" style={quoteTextStyle}>
-        {lastMessage}
+  return (
+    <>
+      {debateStarted === true ? (
+        <div
+          style={
+            turn === debateContext.personOne.name ? rightbubble : leftbubble
+          }
+        >
+          <div variant="body1" style={quoteTextStyle}>
+            {isLoading ? '...' : lastMessage}
+          </div>
+        </div>
+      ) : null}
+      <div style={topicbubble}>
+        <div variant="body1" style={quoteTextStyle}>
+          {debateContext.topic}
+        </div>
       </div>
-    </div> : null}
-    <div style={topicbubble}>
-      <div variant="body1" style={quoteTextStyle}>
-        {debateContext.topic}
-      </div>
-    </div>
-        <button style={buttonStyle}  onClick={handleClick}>Next!</button>
-  </>)
+
+      {!isLoading && (
+        <button style={buttonStyle} onClick={handleClick}>
+          Next!
+        </button>
+      )}
+    </>
+  );
 };

@@ -36,9 +36,11 @@ const ChoosePersonalities = () => {
       <h3 className="centerHeader">Choose your fighters</h3>
 
       <footer className="stepFooter">
-        <button className="stepButton" onClick={handleNext}>
-          Next
-        </button>
+        {personOne && personTwo && (
+          <button className="stepButton" onClick={handleNext}>
+            Next
+          </button>
+        )}
       </footer>
     </>
   ) : null;

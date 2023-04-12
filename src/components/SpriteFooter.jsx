@@ -22,19 +22,25 @@ export const SpriteFooter = () => {
         <div
           style={{
             position: 'fixed',
-            bottom: 30,
-            left: 30,
+            bottom: 0,
+            left: 0,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
+            width: '350px',
+            height: '500px',
           }}
         >
           <Image
             src={`/sprites/${personOne?.sprite}`}
-            width="300"
-            height="500"
+            width="200"
+            height="333"
           />
-          <h1 style={{ color: 'white' }}>{personOne.name}</h1>
+          <h1
+            style={{ color: 'white', textAlign: 'center', background: 'black' }}
+          >
+            {personOne.name}
+          </h1>
         </div>
       )}
 
@@ -43,19 +49,25 @@ export const SpriteFooter = () => {
         <div
           style={{
             position: 'fixed',
-            bottom: 30,
-            right: 30,
+            bottom: 0,
+            right: 0,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
+            width: '350px',
+            height: '500px',
           }}
         >
           <Image
             src={`/sprites/${personTwo?.sprite}`}
-            width="300"
-            height="500"
+            width="200"
+            height="333"
           />
-          <h1 style={{ color: 'white' }}>{personTwo.name}</h1>
+          <h1
+            style={{ color: 'white', textAlign: 'center', background: 'black' }}
+          >
+            {personTwo.name}
+          </h1>
         </div>
       )}
     </>

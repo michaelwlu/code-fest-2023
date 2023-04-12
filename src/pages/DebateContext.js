@@ -10,6 +10,7 @@ export const DebateProvider = ({ children }) => {
   const [personTwo, setPersonTwo] = useState(null);
   const [topic, setTopic] = useState('');
   const [conversation, setConversation] = useState([]);
+  const [debateStarted, setDebateStarted] = useState(false);
 
   return (
     <DebateContext.Provider
@@ -24,6 +25,8 @@ export const DebateProvider = ({ children }) => {
         setPersonTwo,
         setTopic,
         setConversation,
+        debateStarted,
+        setDebateStarted,
       }}
     >
       {children}

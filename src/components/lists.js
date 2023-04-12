@@ -63,7 +63,7 @@ export const personalities = [
   },
   {
     id: 11,
-    name: 'Martin Luther King, Jr.',
+    name: 'Martin Luther King Jr.',
     sprite: 'mlk.png',
     portrait: 'mlk.jpg',
   },
