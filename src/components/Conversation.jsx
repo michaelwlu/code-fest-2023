@@ -29,12 +29,25 @@ export const Conversation = () => {
       personality: turn,
     });
     console.log('response: ', response.data.choices[0].message.content);
+    //set last response as new prompt
     setLastMessage(response.data.choices[0].message.content)
+    //add response to chat log
+    let newChatEntry = {person:turn,message:response.data.choices[0].message.content};
+    setChatLog([...chatLog,newChatEntry])
+    console.log(chatLog)
+    //change turns
     handleTurn()
   };
+
+  const elementsArray = chatLog.map((element, index) => {
+    return <><p key={index}>{element.person}</p><p key={index}>{element.message}</p></>
+  });
+
   return(
   <>
     <h1>test</h1>
     <button onClick={handleClick}>test</button>
-  </>);
+    
+    {elementsArray}
+  </>)
 };

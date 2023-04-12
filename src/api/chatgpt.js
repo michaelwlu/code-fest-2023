@@ -5,6 +5,7 @@ export const getChatGPTResponse = (data) => {
 
   const message = ` respond to this message as ${data.personality} : ${data.prompt}`;
   console.log('awaiting response');
+  console.log(message);
   return axios.post(
     'https://api.openai.com/v1/chat/completions',
     {
