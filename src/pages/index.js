@@ -18,8 +18,12 @@ export default function Home() {
       console.log('starting up...');
       //test entry point here
 
-      const response = await mutateAsync('How is the weather today?');
-      console.log('response: ', response.data.choices[0].text);
+      // const response = await mutateAsync({
+      //   prompt: 'how do we improve civil rights?',
+      //   personality: 'eminem',
+      // });
+
+      // console.log('response: ', response.data.choices[0].message.content);
     };
     start();
   }, []);
