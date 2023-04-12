@@ -1,25 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDebateContext } from './DebateContext';
 import { Personalities } from '@/components/Personalities';
 import { TopicBox } from '@/components/TopicBox';
 
 const ChoosePersonalities = () => {
-  const { step, users, setStep } = useDebateContext();
+  const { step, personOne, setPersonOne, setPersonTwo, personTwo, setStep } =
+    useDebateContext();
+  const [count, setCount] = useState(0);
 
   const handleNext = () => {
-    if (users.length >= 2) {
-      setStep(2);
+    if (personOne && personTwo) {
+      setStep(1);
     }
   };
 
-  return step === 1 ? (
+  const handlePersonalityClick = (person) => {
+    if (!personOne) {
+      setPersonOne(person);
+    } else if (!personTwo) {
+      setPersonTwo(person);
+    }
+    alert(personOne);
+  };
+
+  return step === 0 ? (
     <>
       <section>
-        <Personalities onClick={() => handlePersonalityClick()}></Personalities>
-      </section>
-
-      <section>
-        <TopicBox></TopicBox>
+        <Personalities
+          onClick={(e) => handlePersonalityClick(e)}
+        ></Personalities>
       </section>
 
       <footer>
