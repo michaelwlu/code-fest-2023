@@ -1,4 +1,4 @@
-import React, { useEffect, useState, Fragment, useCallback } from 'react';
+import React from 'react';
 import { useDebateContext } from '../pages/DebateContext';
 import { personalities } from './lists';
 

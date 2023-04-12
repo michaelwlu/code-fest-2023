@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDebateContext } from './DebateContext';
 import { Personalities } from '@/components/Personalities';
-import { TopicBox } from '@/components/TopicBox';
 
 const ChoosePersonalities = () => {
   const { step, personOne, setPersonOne, setPersonTwo, personTwo, setStep } =
@@ -14,7 +13,7 @@ const ChoosePersonalities = () => {
   };
 
   const handlePersonalityClick = (person) => {
-    if (!personOne && !personTwo) {
+    if (!personOne) {
       setPersonOne(person);
     } else if (personOne === person) {
       setPersonOne('');
