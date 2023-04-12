@@ -30,3 +30,19 @@ body {
 .borderRed {
   border: 10px solid #fc0000;
 }
+
+.centerHeader,
+.stepFooter {
+  text-align: center;
+
+  .stepButton {
+    background-color: #d9d9d9;
+    width: 196px;
+    height: 66px;
+    font-size: 36px;
+  }
+}
+
+.centerHeader {
+  font-size: 36px;
+}

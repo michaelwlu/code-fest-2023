@@ -19,7 +19,6 @@ const ChoosePersonalities = () => {
     } else if (!personTwo) {
       setPersonTwo(person);
     }
-    alert(personOne);
   };
 
   return step === 0 ? (
@@ -30,8 +29,12 @@ const ChoosePersonalities = () => {
         ></Personalities>
       </section>
 
-      <footer>
-        <button onClick={handleNext}>Next</button>
+      <h3 class="centerHeader">Choose your fighters</h3>
+
+      <footer class="stepFooter">
+        <button class="stepButton" onClick={handleNext}>
+          Next
+        </button>
       </footer>
     </>
   ) : null;
