@@ -1,3 +1,6 @@
+import { Conversation } from '@/components/Conversation';
+import { Personalities } from '@/components/Personalities';
+import { TopicBox } from '@/components/TopicBox';
 import { useEffect, useState } from 'react';
 
 export default function Home() {
@@ -13,7 +16,20 @@ export default function Home() {
 
   return (
     <div className="App">
-      <h1>Test</h1>
+      <h1>Test App Name</h1>
+
+      {/* Select Profile Section */}
+      <section>
+        <Personalities></Personalities>
+      </section>
+
+      <section>
+        <TopicBox></TopicBox>
+      </section>
+
+      <section>
+        <Conversation></Conversation>
+      </section>
     </div>
   );
 }
