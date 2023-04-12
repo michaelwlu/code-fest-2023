@@ -12,7 +12,7 @@ export const Topics = () => {
     } else if (topic && topic !== question) {
       setTopic(question);
     } else if (topic && topic === question) {
-      setTopic(null);
+      setTopic('');
     }
   };
 

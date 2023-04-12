@@ -8,7 +8,7 @@ export const DebateProvider = ({ children }) => {
   const [step, setStep] = useState(0);
   const [personOne, setPersonOne] = useState(null);
   const [personTwo, setPersonTwo] = useState(null);
-  const [topic, setTopic] = useState(null);
+  const [topic, setTopic] = useState('');
   const [conversation, setConversation] = useState([]);
 
   return (

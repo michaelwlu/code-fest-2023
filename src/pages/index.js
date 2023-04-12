@@ -34,9 +34,7 @@ export default function Home() {
     <DebateProvider>
       <div className="App">
         <Box mt={2} ml={2}>
-          <Typography variant="h3" component="h1" style={{ color: 'white' }}>
-            Epic Debate Battles
-          </Typography>
+          <h1 style={{ color: 'white' }}>Epic Debate Battles</h1>
         </Box>
 
         <ChoosePersonalities />
