@@ -48,7 +48,7 @@ export default function Home() {
     }
   };
 
-  const handlePersonalityClick = () => {
+  const handlePersonalityClick = (pers) => {
     return null;
   };
 
