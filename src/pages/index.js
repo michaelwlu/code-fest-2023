@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-
+import axios from 'axios';
 export default function Home() {
   const [users, setUsers] = useState([]);
 
@@ -7,6 +7,24 @@ export default function Home() {
     const start = async () => {
       console.log('starting up...');
       //test entry point here
+
+      const response = await axios.post(
+        'https://api.openai.com/v1/completions',
+        {
+          prompt: `how is the weather in new york today?"`,
+          model: 'text-davinci-002',
+          max_tokens: 50,
+          n: 1,
+          stop: '.',
+        },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer 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`,
+          },
+        }
+      );
+      console.log('response: ', response.data.choices[0].text);
     };
     start();
   }, []);
