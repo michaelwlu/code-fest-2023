@@ -1,9 +1,9 @@
 import React, { useEffect, useState, Fragment, useCallback } from 'react';
 
-export const TopicBox = () => {
+export const Topics = () => {
   return (
     <>
-      <textarea></textarea>
+      <h1>Topics Section</h1>
     </>
   );
 };
