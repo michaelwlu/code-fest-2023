@@ -6,6 +6,7 @@ body {
   background-size: cover;
   font-family: 'Roboto Mono';
 }
+
 .App {
   max-width: 1400px;
   margin: 0 auto;
@@ -31,7 +32,7 @@ body {
 }
 
 .topicsContainer {
-  width: 500px;
+  width: 800px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
@@ -41,7 +42,7 @@ body {
   //width: 100px;
   // height: 100px;
   background-color: #d9adad;
-  flex: 1 0 21%; /* explanation below */
+  flex: 1 0 15%; /* explanation below */
   margin: 5px;
   height: 100px;
   //margin: 10px;
@@ -74,6 +75,7 @@ body {
     width: 196px;
     height: 66px;
     font-size: 36px;
+    font-family: 'Roboto Mono';
   }
 }
 
@@ -90,9 +92,11 @@ body {
   .centerHeader {
     margin: 25px auto;
     color: #ffffff;
+    width: 100%;
   }
 }
 
 .topicText {
   font-size: 16px;
+  text-align: center;
 }

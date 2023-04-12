@@ -11,10 +11,6 @@ const ChooseTopic = () => {
     }
   };
 
-  const handleInputChange = (e) => {
-    setTopic(e.target.value);
-  };
-
   return step === 1 ? (
     <>
       <section>
