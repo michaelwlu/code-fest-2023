@@ -58,22 +58,14 @@ export const Conversation = () => {
 
   const buttonStyle = {
     position: 'fixed',
-<<<<<<< Updated upstream
     bottom: '75px',
     right: '45%',
-    backgroundColor:'#d9d9d9',
-    width:'196px',
-    height:'66px',
-    fontSize:'36px',
-    font:'Roboto Mono'
-
-  }
-
-=======
-    bottom: '20px',
-    right: '50%',
+    backgroundColor: '#d9d9d9',
+    width: '196px',
+    height: '66px',
+    fontSize: '36px',
+    font: 'Roboto Mono',
   };
->>>>>>> Stashed changes
 
   //determines who's turn it is. turn starts as person 1
   const handleTurn = async () => {
