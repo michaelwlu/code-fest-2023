@@ -40,7 +40,7 @@ export const Conversation = () => {
 
   const topicbubble = {
     position: 'fixed',
-    bottom: '40px',
+    bottom: '150px',
     right: '30%',
     backgroundColor: '#fff',
     color: '#000',
@@ -59,8 +59,14 @@ export const Conversation = () => {
 
   const buttonStyle = {
     position: 'fixed',
-    bottom: '20px',
-    right: '50%',
+    bottom: '75px',
+    right: '45%',
+    backgroundColor:'#d9d9d9',
+    width:'196px',
+    height:'66px',
+    fontSize:'36px',
+    font:'Roboto Mono'
+
   }
 
 
