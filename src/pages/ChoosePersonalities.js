@@ -13,14 +13,15 @@ const ChoosePersonalities = () => {
   };
 
   const handlePersonalityClick = (person) => {
-    if (!personOne) {
+    console.log(person);
+    if (!personOne && person.name !== personTwo?.name) {
       setPersonOne(person);
-    } else if (personOne === person) {
-      setPersonOne('');
+    } else if (personOne?.name === person.name) {
+      setPersonOne(null);
     } else if (!personTwo) {
       setPersonTwo(person);
-    } else if (personTwo === person) {
-      setPersonTwo('');
+    } else if (personTwo?.name === person.name) {
+      setPersonTwo(null);
     }
   };
 
