@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const getChatGPTResponse = ({ prompt }) => {
+export const getChatGPTResponse = (prompt) => {
   const openaiKey = process.env.NEXT_PUBLIC_OPENAI_API_KEY;
 
   return axios.post(
