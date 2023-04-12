@@ -13,6 +13,7 @@ export const Personalities = (props) => {
         {personalities.map((person) => {
           return (
             <div
+              key={person.id}
               onClick={() => onClick(person)}
               className={`personBox ${
                 personOne === person ? 'borderBlue' : ''
