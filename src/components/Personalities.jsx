@@ -26,7 +26,6 @@ export const Personalities = (props) => {
           );
         })}
       </div>
-      <SpriteFooter></SpriteFooter>
     </>
   );
 };

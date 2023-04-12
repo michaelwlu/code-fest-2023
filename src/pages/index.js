@@ -9,6 +9,8 @@ import { DebateProvider } from './DebateContext';
 import ChoosePersonalities from './ChoosePersonalities';
 import ChooseTopic from './ChooseTopic';
 import StartConversation from './StartConversation';
+import { SpriteFooter } from '@/components/SpriteFooter';
+import { Box, Typography } from '@mui/material';
 
 export default function Home() {
   const { mutateAsync } = useChatGPTMutation();
@@ -31,13 +33,19 @@ export default function Home() {
   return (
     <DebateProvider>
       <div className="App">
-        <h1>Test App Name</h1>
+        <Box mt={2} ml={2}>
+          <Typography variant="h3" component="h1" style={{ color: 'white' }}>
+            Epic Debate Battles
+          </Typography>
+        </Box>
 
         <ChoosePersonalities />
 
         <ChooseTopic />
 
         <StartConversation />
+
+        <SpriteFooter />
       </div>
     </DebateProvider>
   );

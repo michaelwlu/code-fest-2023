@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDebateContext } from './DebateContext';
 import { Personalities } from '@/components/Personalities';
+import { Button } from '@mui/material';
 
 const ChoosePersonalities = () => {
   const { step, personOne, setPersonOne, setPersonTwo, personTwo, setStep } =
@@ -36,9 +37,9 @@ const ChoosePersonalities = () => {
       <h3 class="centerHeader">Choose your fighters</h3>
 
       <footer class="stepFooter">
-        <button class="stepButton" onClick={handleNext}>
+        <Button variant="contained" onClick={handleNext}>
           Next
-        </button>
+        </Button>
       </footer>
     </>
   ) : null;
