@@ -7,11 +7,60 @@ export const Conversation = () => {
   const { mutateAsync } = useChatGPTMutation();
 
   //determines who's turn it is
-  const [turn, setTurn] = useState(debateContext.personOne.name);
+  const [turn, setTurn] = useState(debateContext.personTwo.name);
+  const [debateStarted, setDebateStarted] = useState(false);
   //stores all messages
   const [chatLog, setChatLog] = useState([]);
   //stores last response to be used as prompt. inits as topic
-  const [lastMessage, setLastMessage] = useState(debateContext.topic);
+  const [lastMessage,setLastMessage]=useState(debateContext.topic)
+
+  const leftbubble = {
+    position: 'fixed',
+    top: '20px',
+    left: '20px',
+    backgroundColor: '#fff',
+    color: '#000',
+    padding: '10px',
+    borderRadius: '10px',
+    zIndex: 9999,
+    width:'40%'
+  };
+
+  const rightbubble = {
+    position: 'fixed',
+    top: '20px',
+    right: '20px',
+    backgroundColor: '#fff',
+    color: '#000',
+    padding: '10px',
+    borderRadius: '10px',
+    zIndex: 9999,
+    width:'40%'
+  };
+
+  const topicbubble = {
+    position: 'fixed',
+    bottom: '40px',
+    right: '50%',
+    backgroundColor: '#fff',
+    color: '#000',
+    padding: '10px',
+    borderRadius: '10px',
+    zIndex: 9999,
+    width:'40%'
+  }
+
+
+  const quoteTextStyle = {
+    fontSize: '16px',
+    fontWeight: 'bold',
+  };
+
+  const buttonStyle = {
+    position: 'fixed',
+    bottom: '20px',
+  }
+
 
   //determines who's turn it is. turn starts as person 1
   const handleTurn = async () => {
@@ -37,6 +86,7 @@ export const Conversation = () => {
     console.log(chatLog);
     //change turns
     handleTurn();
+    setDebateStarted(true);
   };
 
   const elementsArray = chatLog.map((element, index) => {
@@ -48,12 +98,19 @@ export const Conversation = () => {
     );
   });
 
-  return (
-    <>
-      <h1>test</h1>
-      <button onClick={handleClick}>test</button>
-
-      {elementsArray}
-    </>
-  );
+  return(
+  <>
+    {debateStarted === true ? 
+    <div style={turn === debateContext.personOne.name ? leftbubble:rightbubble}>
+      <div variant="body1" style={quoteTextStyle}>
+        {lastMessage}
+      </div>
+    </div> : null}
+    <div style={topicbubble}>
+      <div variant="body1" style={quoteTextStyle}>
+        {debateContext.topic}
+      </div>
+    </div>
+        <button style={buttonStyle}  onClick={handleClick}>Next!</button>
+  </>)
 };
