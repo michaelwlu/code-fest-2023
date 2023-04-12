@@ -4,8 +4,7 @@ import { personalities } from './lists';
 
 export const Personalities = (props) => {
   const { onClick } = props;
-  const { step, personOne, setPersonOne, setPersonTwo, personTwo, setStep } =
-    useDebateContext();
+  const { personOne, personTwo } = useDebateContext();
 
   return (
     <>

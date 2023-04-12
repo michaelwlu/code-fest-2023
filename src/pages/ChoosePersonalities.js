@@ -23,13 +23,6 @@ const ChoosePersonalities = () => {
     } else if (personTwo === person) {
       setPersonTwo('');
     }
-
-    // if (person === personOne) {
-
-    // }
-    // if (person === personTwo) {
-    //   setPersonTwo('');
-    // }
   };
 
   return step === 0 ? (
