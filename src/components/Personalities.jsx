@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDebateContext } from '../pages/DebateContext';
 import { personalities } from './lists';
+import { SpriteFooter } from './SpriteFooter';
 
 export const Personalities = (props) => {
   const { onClick } = props;
@@ -13,15 +14,18 @@ export const Personalities = (props) => {
           return (
             <div
               onClick={() => onClick(person)}
-              class={`personBox ${personOne === person ? 'borderBlue' : ''} ${
-                personTwo === person ? 'borderRed' : ''
-              }`}
-            >
-              {person.name}
-            </div>
+              className={`personBox ${
+                personOne === person ? 'borderBlue' : ''
+              } ${personTwo === person ? 'borderRed' : ''}`}
+              style={{
+                background: `url(/portraits/${person.portrait}) no-repeat center center`,
+                backgroundSize: 'contain',
+              }}
+            ></div>
           );
         })}
       </div>
+      <SpriteFooter></SpriteFooter>
     </>
   );
 };
