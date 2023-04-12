@@ -1,18 +1,78 @@
 import React from 'react';
 
 export const personalities = [
-  { name: 'Mahatma Gandhi' },
-  { name: 'William Shakespeare' },
-  { name: 'Kanye West' },
-  { name: 'Steve Harvey' },
-  { name: 'Beyonce' },
-  { name: 'Taylor Swift' },
-  { name: 'Gwyneth Paltrow' },
-  { name: 'Queen Elizabeth II' },
-  { name: 'Karl Marx' },
-  { name: 'Albert Einstein' },
-  { name: 'Martin Luther King, Jr.' },
-  { name: 'Eminem' },
+  {
+    id: 1,
+    name: 'Mahatma Gandhi',
+    sprite: 'gandhi.png',
+    portrait: 'gandhi.jpg',
+  },
+  {
+    id: 2,
+    name: 'William Shakespeare',
+    sprite: 'shakespeare.png',
+    portrait: 'shakespeare.jpg',
+  },
+  {
+    id: 3,
+    name: 'Ayn Rand',
+    sprite: 'aynrand.png',
+    portrait: 'aynrand.jpg',
+  },
+  {
+    id: 4,
+    name: 'Confucius',
+    sprite: 'confucius.png',
+    portrait: 'confucius.jpg',
+  },
+  {
+    id: 5,
+    name: 'Sherlock Holmes',
+    sprite: 'holmes.png',
+    portrait: 'holmes.jpg',
+  },
+  {
+    id: 6,
+    name: 'Emily Dickinson',
+    sprite: 'dickinson.png',
+    portrait: 'dickinson.jpg',
+  },
+  {
+    id: 7,
+    name: 'Maya Angelou',
+    sprite: 'angelou.png',
+    portrait: 'angelou.jpg',
+  },
+  {
+    id: 8,
+    name: 'Karl Marx',
+    sprite: 'marx.png',
+    portrait: 'marx.jpg',
+  },
+  {
+    id: 9,
+    name: 'Homer Simpson',
+    sprite: 'homer.png',
+    portrait: 'homer.jpg',
+  },
+  {
+    id: 10,
+    name: 'Albert Einstein',
+    sprite: 'einstein.png',
+    portrait: 'einstein.jpg',
+  },
+  {
+    id: 11,
+    name: 'Martin Luther King, Jr.',
+    sprite: 'mlk.png',
+    portrait: 'mlk.jpg',
+  },
+  {
+    id: 12,
+    name: 'Eminem',
+    sprite: 'eminem.png',
+    portrait: 'eminem.jpg',
+  },
 ];
 
 export const topics = [
